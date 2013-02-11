@@ -1,0 +1,19 @@
+#include "table.h"
+
+
+int main(int argc, char **argv)
+{
+  int retVal = 0;
+	table tab;
+	char *str =  "dtas:%s:jkbv %d gr2:datfffa3:data7;erfv %f:vria4:dahta5:dajta6:daga8;di:uva4:dahfgta5:dajtjgja6:dagg9;";
+	char *Ppdstr = 0;
+	prepareData(&Ppdstr, str, "192.168.11.1", retVal, 12.35);
+	printf("%s\n", Ppdstr);
+	retVal = createTable("my awesome title", Ppdstr, &tab);
+	if (0 == retVal)
+	{
+		printf("%s\n", tab.pdata);
+		destroyTable(tab);
+	}
+	return retVal;
+}
